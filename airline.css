@@ -1,0 +1,24 @@
+body
+{
+	background-image:url('https://content.presspage.com/uploads/2431/1920_photo1.png?10000');
+	background-repeat: no-repeat;	
+	background-size: cover;
+}
+
+h1
+{
+	color: blue; text-align:center;
+}
+h2
+{
+	color:red; text-align: center;
+}
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffe0;
+}
+tR{ background-color: #ffefff;}
+tH{ background-color: #BDB76B;}
+a{text-align: center;}
