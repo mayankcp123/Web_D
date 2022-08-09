@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+	function validateUser(){
+		var username = document.getElementById("uname").value
+		if(username==""){
+			//alert="username can not be blank";
+			document.getElementById("userErr").innerHTML='username cannot be blank';
+			return false;
+		}
+		var password= document.getElementById("upass").value
+		if(password==""){
+			document.getElementById("passErr").innerHTML='Password cannot be blank';
+			return false;
+		}
+	    if (password.length < 8) {
+	        alert("Your password must be at least 8 characters"); 
+	        return false;
+	        }
+	    var reEnterPass = document.getElementById("urepass").value
+	    if (reEnterPass != password){
+	    	document.getElementById("repassErr").innerHTML='Password did not match';
+	    	return false;
+	    }
+	    var email=document.getElementById("emailid").value
+	    if (email != "@gmail.com" ){
+	    	document.getElementById("emailErr").innerHTML='Email is invalid.';
+	    	return false;
+	    }
+		return true;
+	}
+	function clearUserErr(){document.getElementById("userErr").innerHTML="";}
+	function clearPassErr(){document.getElementById("passErr").innerHTML="";}
+	function clearRePassErr(){document.getElementById("repassErr").innerHTML=""}
+	function clearEmailErr(){document.getElementById("emailErr").innerHTML=""}
+
+</script>
+<body>
+
+<form action="UserDashboard.html">
+
+Enter username=<input type=text id="uname" onKeyup="clearUserErr()"><span id="userErr"></span><br>
+Enter password=<input type=password id="upass" onKeyup="clearPassErr()"><span id="passErr"></span><br>
+ReEnter password=<input type=password id="urepass" onKeyup="clearRePassErr()"><span id="repassErr"></span><br>
+Enter email=<input type=email id="emailid" onKeyup="clearEmailErr()"><span id="emailErr"></span><br>
+<input type=submit name="submit" value="Login" onClick="return validateUser()" >
+</form>
+</body>
+</html>
